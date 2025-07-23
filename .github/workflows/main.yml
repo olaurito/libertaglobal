@@ -31,6 +31,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: liberta/
+          port: 21
+          server-dir: ./
       - name: ✅ Finalizado
         run: echo "Deploy concluído com sucesso!"
