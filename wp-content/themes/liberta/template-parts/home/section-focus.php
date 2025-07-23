@@ -12,11 +12,12 @@
 
             <div class="col-6 col-md-4">
                 <?php if ($is_button): ?>
-                <div class="focus-content focus-button">
-                    <h4 class="focus-button-title"><?php echo get_sub_field('focus_make_part'); ?></h4>
-                    <a href="<?php echo esc_url($link_button['url']); ?>" class="btn btn-green">Comece
-                        agora</a>
-
+                <div class="focus-content">
+                    <div class="focus-button">
+                        <h4 class="focus-button-title"><?php echo get_sub_field('focus_make_part'); ?></h4>
+                        <a href="<?php echo esc_url($link_button['url']); ?>" class="btn btn-green">Comece
+                            agora</a>
+                    </div>
                 </div>
                 <?php else: ?>
                 <div class="focus-content">
