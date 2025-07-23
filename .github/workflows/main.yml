@@ -19,10 +19,18 @@ jobs:
     steps:
       - name: Repo Checkout
         uses: actions/checkout@v4
+
+      - name: 🧹 Remover arquivos desnecessários
+        run: |
+          rm -rf .git .github node_modules/ LICENSE
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+
         with:
-          server: ${{secrets.FTP_HOST}}
-          username: ${{secrets.FTP_USER}}
-          password: ${{secrets.FTP_PASSWORD}}
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
           server-dir: liberta/
+      - name: ✅ Finalizado
+        run: echo "Deploy concluído com sucesso!"
